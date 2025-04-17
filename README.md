@@ -26,8 +26,7 @@ The python script will place these videos, respectively, under Folder userA & us
 - numpy 
 - pillow
 - matplotlib
-#### WARNING - The following code may ruin your system. 
-Instead you may follow the official way creating an virtual python env
+#### WARNING - The following code may ruin your system. Instead you may follow the official way creating an virtual python env
 #### FINAL WARNING - DONT RUN IT if you dont know what it does
 `sudo pip3 install --break-system-packages  pytesseract numpy pillow matplotlib`
 
