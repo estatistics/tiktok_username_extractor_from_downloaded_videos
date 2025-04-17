@@ -36,10 +36,11 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
 
 - psm - what mode of ocr to use
 - oem - what language machine to use
--load_system_dawg=false load_freq_dawg=false
+- 
+- load_system_dawg=false load_freq_dawg=false\
  disable the word mode as usernames are not "words" but letters/digits/underscore
-- whitelisting (allow) these characters for OCR as
-  official tiktok page says that are allowed as characters in username
+- whitelisting (allow) these characters for OCR as\
+  official tiktok page says that are allowed as characters in username\
   `tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ_.'`
 
 ## Precautions
