@@ -115,7 +115,7 @@ then commands to move downloaded tiktok video files under them, respectively.
 
 
 ## STEPS to do it
-STEP 1 - extract the last frame from each downloaded tiktok video that\ 
+STEP 1 - extract the last frame from each downloaded tiktok video that\
 it may contain the tiktok username centered in the image together with\
 the tiktok logo in a black screen as background.
 
