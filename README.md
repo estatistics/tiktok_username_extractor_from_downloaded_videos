@@ -1,6 +1,6 @@
 # tiktok OCR username extractor from downloaded videos
 
-This is a tiktok username extractor from videos that you have downloaded directly from tiktok\
+This is a tiktok username extractor from videos that you have downloaded directly from tiktok.\
 It MUST include as last frame a black frame with the logo of Tiktok and the username\
 at the center of the frame. 
 
