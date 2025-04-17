@@ -119,7 +119,7 @@ STEP 1 - extract the last frame from each downloaded tiktok video that\
 it may contain the tiktok username centered in the image together with\
 the tiktok logo in a black screen as background.
 
-- Warning: if audio is shorter/bigger than video then incorrect frame may produced
+Warning: if audio is shorter/bigger than video then incorrect frame may produced\
 `for vids in *.mp4; do ffmpeg -sseof -1 -i "$vids" -vsync 0 -q:v 1 -update true "$vids".jpg; done`
 
 STEP 2 - manipulate extracted frame
