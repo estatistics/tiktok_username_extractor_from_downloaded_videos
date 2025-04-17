@@ -8,8 +8,8 @@
 # step 2 manipulate extracted frame
 # you cant merge these two commands. 
 # crop frame / resize / sharpen for better results
-# for file in *.jpg; do convert "$file" -crop 100%x15%+0+500  -quality 100  "/media/eros/Events00/fixing/ScreenRecord_VIDS/__ΤΙΚΤΟΚs_FIXed checked/ocr/crop/""$(basename "$file")" ; done;
-# for file in *.jpg; do convert "$file" -resize 200% -sharpen 0x10 -quality 100  "/media/eros/Events00/fixing/ScreenRecord_VIDS/__ΤΙΚΤΟΚs_FIXed checked/ocr/crop/""$(basename "$file")" ; done;
+# for file in *.jpg; do convert "$file" -crop 100%x15%+0+500  -quality 100  "/mnt/ssd1/tiktok_vids/""$(basename "$file")" ; done;
+# for file in *.jpg; do convert "$file" -resize 200% -sharpen 0x10 -quality 100  "/mnt/ssd1/tiktok_vids/""$(basename "$file")" ; done;
 
 # step 3, try the following code to a sample of images in a sample dir, 
 # to check if works properly
@@ -24,13 +24,15 @@ import colorsys
 import numpy as np
 from PIL import Image
 from matplotlib.image import imread
-from imutils.object_detection import non_max_suppression
+# from imutils.object_detection import non_max_suppression
 
 # tesseract config / whitelisting the allowed characters in tiktok username
 cfg = '--psm 6 --oem 1  -c load_system_dawg=false -c load_freq_dawg=false -c tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ_.'
 
-pth0='/media/eros/Events00/fixing/ScreenRecord_VIDS/__ΤΙΚΤΟΚs_FIXed checked/ocr/crop/'
-# img_pth='/media/eros/Events00/fixing/ScreenRecord_VIDS/__ΤΙΚΤΟΚs_FIXed checked/ocr/crop/a.jpg'
+# PLEASE set the path that your tiktok videos are placed
+pth0 = '/mnt/ssd1/tiktok_vids/'
+pth_for_frozen_east_text_detection = '/mnt/ssd1/tiktok_vids/frozen_east_text_detection.pb'
+pth_detector = pth_for_frozen_east_text_detection
 
 matches=[]
 # print(len(matches))
@@ -72,7 +74,7 @@ for match in matches:
 
     # load the pre-trained EAST text detector
     # print("[INFO] loading EAST text detector...")
-    net = cv2.dnn.readNet("/home/eros/Downloads/_LINUX/frozen_east_text_detection.pb")
+    net = cv2.dnn.readNet(pth_detector)
 
     # construct a blob from the image and then perform a forward pass of
     # the model to obtain the two output layer sets
@@ -133,7 +135,7 @@ for match in matches:
                     # boxes = non_max_suppression(np.array(rects), probs=confidences)
                     # print(boxes)
                     
-    # some checks that there was found indeed text in the image                
+    # some checks that there was detected indeed text in the image                
     if len(rects) == 0:
         print("--- no text found --- sample_path inserted in the txt")
         new_txt = "sample"
@@ -164,16 +166,13 @@ for match in matches:
                 endX = int(endX * rW)
                 endY = int(endY * rH)
                 new_startY = (startY)
-                 
+
                 # if negative, zero it
                 if (startY < 0):  startY = 0
                 if (endY < 0):    endY =   0
                 if (startX < 0):  startX = 0
                 if (endX < 0):    endX =   0
-                
-                # random_number = math.floor(startX+startY+endX+endY)
-                # print(random_number)
-                
+
                 #print(startX)
                 #print(startY)
                 #print(endX)
@@ -181,9 +180,6 @@ for match in matches:
                 #print(rW)
                 #print(rH)
 
-                # draw the bounding box on the image
-                # cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 10)
-            
                 # manipulating manually the dimensions of crop
                 new_startY = (startY)
                 if (new_startY < 0):         # if negative, replace it
@@ -209,17 +205,15 @@ for match in matches:
                 # print(new_startX)
                 # print(new_startY)
                 # print("old" + str(startY))
-                #print(new_endX)
+                # print(new_endX)
                 # print(new_endY)
                 
                 crop_image = img_ok[(new_startY):(new_endY), (new_startX):(new_endX)]
                 #print(new_startY, new_endY, new_startX, new_endX)
                 
-                #cv2.imwrite(os.path.join(pth0,"out1.jpg"), crop_image)
-                
-                # Extract the text from the cropped image, and print it
+                # Extract the text from the cropped image
                 txt = pytesseract.image_to_string(crop_image, config=cfg)             
-               
+
                 # text cleaning / join multiliners & spaces / drop all chars after space
                 sep = ' '
                 stripped_txt = txt.split(sep, 1)[0]
@@ -229,7 +223,7 @@ for match in matches:
                 if len(new_txt) < 3:
                     new_txt = "sample"
                 print(new_txt)
-                              
+
                 # print(os.path.join(match + ".txt")) 
                 # write extracted text on a txt file
                 f = open( os.path.join(match + ".txt"), "w")
