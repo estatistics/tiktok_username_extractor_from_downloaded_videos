@@ -58,7 +58,7 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
 
 ### other vars
 - `new_startY, new_endY, new_startX, new_endX` are the dimensions in pixel of the box drawn over the recognized text area 
-  eg. `100 150 200 250` will create a box at these pixels by joining these pixel dots
+  eg. `100 150 200 250` will create a boxby joining these pixel dots
   - These vars has some extra weights in order to produce better results. You may change them as you wish
 - the original code produced multiple confidence levels for the box pixels over the detected text
   - only the highest (best) confidence level is used here. A cut off score of 0.999 exists.
