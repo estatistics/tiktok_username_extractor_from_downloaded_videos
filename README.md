@@ -84,10 +84,10 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
 ```
 ### THE ESSENTIAL PART OF THE SCRIPT 
 - You may comment these lines if you dont want to produce a single file `0mv_file.txt` that contains commands to 
-- Create directories (all in doublequotes) based on the recognized tiktok username -
+- Create directories (all in doublequotes) based on the recognized tiktok username 
 - Dont worry no illegal characters but WARNING "." is legal"
 - and then transfer all downloaded tiktok files under their respecting username.
-- This is done by producing lines like
+- This is done by producing lines like:
      
 - ` mkdir "pth/username_folder"; (next line) mv "pth/downloaded_video_tiktok pth/username_folder/"; `
 - Then, this txt file may be renamed as ".sh" and give permisions to executed,
