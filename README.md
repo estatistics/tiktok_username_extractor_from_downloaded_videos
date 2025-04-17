@@ -93,8 +93,9 @@ This is done by producing lines like:\
 ` mkdir "pth/username_folder"; (next line) mv "pth/downloaded_video_tiktok pth/username_folder/"; `
 - Then, this txt file may be renamed as ".sh" and give permisions to executed, in order to run "mkdir" and "mv" commands. 
   
-- File is opened as "append". For every run ADD lines in the file, dont delete previous entries.
-- You must do this manually -delete 0mv_file.txt-, if you would like, after each run
+- File is opened as "append". For every run ADD lines in the file.
+- You must do this manually `delete 0mv_file.txt`, if you would like, after each run
+- Otherwise you may have multiple same lines after each run. 
     
                 f2 = open( os.path.join(pth0 + "0mv_file.txt"), "a")
                 f2.write("mkdir"+" "+'"'+str(path)+'"'+";"+'\n')
