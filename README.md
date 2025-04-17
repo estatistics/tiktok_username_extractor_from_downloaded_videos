@@ -32,7 +32,7 @@ The python script will place these videos, respectively, under Folder userA & us
 
 ## Explaining tesseract options
 This line configure pytesseract (please refer to tesseract manual/help pages for more)\
-`cfg = '--psm 6 --oem 1  -c load_system_dawg=false -c load_freq_dawg=false -c tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ_.'`
+`cfg = '--psm 6 --oem 1  -c load_system_dawg=false -c load_freq_dawg=false -c tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ_.`
 
 - psm - what mode of ocr to use
 - oem - what language machine to use
