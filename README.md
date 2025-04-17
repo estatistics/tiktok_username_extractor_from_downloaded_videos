@@ -82,10 +82,11 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
                 f.write(new_txt)
                 f.close()
 ```
+
 ### THE ESSENTIAL PART OF THE SCRIPT 
-- You may comment these lines if you dont want to produce a single file `0mv_file.txt` that contains commands to 
+- You may comment these lines if you dont want to produce a single file `0mv_file.txt` that contains commands to
 - Create directories (all in doublequotes) based on the recognized tiktok username 
-- Dont worry no illegal characters but WARNING "." is legal"
+- Dont worry - no illegal - characters but WARNING  - "." - is legal". It may treated as hidden folders if is the 1st char. 
 - and then transfer all downloaded tiktok files under their respecting username.
 - This is done by producing lines like:
      
