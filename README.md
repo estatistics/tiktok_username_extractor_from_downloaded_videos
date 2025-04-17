@@ -61,7 +61,7 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
   eg. `100 150 200 250` will create a boxby joining these pixel dots
   - These vars has some extra weights in order to produce better results. You may change them as you wish
 - The original code produced multiple confidence levels (multiple dimensions of boxes) over the detected text
-  - only the highest (best) confidence level is used here. A cut off score of 0.999 exist as preliminary check.
+  - only the highest (best) confidence level is used here. A cut off score of `0.999` exist as preliminary check.
 - You may change the detected picture format from `".jpg"` to something else that cv2 supports
 - If Text was not detected, it may print `print("NO TEXT WAS FOUND ON IMAGE")`.
   - Then the name of `"sample"` folder will be given in order to move all unrecognized tiktok videos under it.
