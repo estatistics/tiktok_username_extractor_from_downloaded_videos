@@ -49,19 +49,26 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
 - The character "@" in OCR found as "G" or "2". I havent tried to whitelist "@".
    
 ## Variables to set / manipulate
+### path sets
 - you must set pth0 in py script - the path that your videos will be procceed
+- you must set pth_for_frozen_east_text_detection in py script where the pb file exists
+
 - new_startY, new_endY, new_startX, new_endX are the dimensions in pixel of the box drawn over the recognized text area 
   eg. 100 150 200 250 will create a box at these pixels by joining these pixel dots
   - These vars has some extra weights in order to produce better results. You may change them as you wish
 - the original code produced multiple confidence levels for the box pixels over the detected text
   - only the highest (best) confidence level is used here. A cut off score of 0.999 exists.
 - uncommenting both `cv2.imshow` and `cv2.waitKey()` you can see the picture/s with username produced
-- You may uncomment `cv2.imwrite(os.path.join(pth0,"out1.jpg"), crop_image)`
+- You may uncomment `cv2.imwrite(os.path.join( match + "_cropped.jpg"), crop_image), crop_image)`
    - if you like to save the cropped image with the detected text area.
 - You may change the detected picture format from ".jpg" to something else that cv2 supports
 
+
 ## What the script does ?
-In the specified folder, check all files ".jpg" under the path that you provided inside the scipt. 
+In the specified folder, check all files ".jpg" under the path that you provided inside the scipt.\
+They are saved in a variable "matches". Then image is proccessed as numpy area code. \
+Then the code try to detect the text area using 
+
 
 
 
