@@ -19,6 +19,8 @@ The python script will place these videos, respectively, under Folder userA & us
 - auto detetion for shapes (free on web) -> frozen_east_text_detection.pb\
   you may place it in the same folder as this python script\
 `wget https://github.com/oyyd/frozen_east_text_detection.pb/blob/master/frozen_east_text_detection.pb`
+- ffmpeg (for image manipulation)
+- im6 (magick for image manipulation)
 
 ## python 3 packages
 - cv2: `sudo apt-get install python3-opencv`
@@ -112,6 +114,30 @@ contains commands to create folders according to detected username text, and \
 then commands to move downloaded tiktok video files under them, respectively. 
 
 
+## STEPS to do it
+STEP 1 - extract the last frame from each downloaded tiktok video that\ 
+it may contain the tiktok username centered in the image together with\
+the tiktok logo in a black screen as background.
+
+- Warning: if audio is shorter/bigger than video then incorrect frame may produced
+`for vids in *.mp4; do ffmpeg -sseof -1 -i "$vids" -vsync 0 -q:v 1 -update true "$vids".jpg; done`
+
+STEP 2 - manipulate extracted frame
+- you cant merge these two commands due to crop/resize are handled differently (???)
+- and it is confused - it process the same multiple times (bug?)
+- crop frame / resize / sharpen for better results
+`for file in *.jpg; do convert "$file" -crop 100%x15%+0+500  -quality 100  "/mnt/sdd1/tiktok_videos/""$(basename "$file")" ; done;`
+`for file in *.jpg; do convert "$file" -resize 200% -sharpen 0x10 -quality 100  "/mnt/sdd1/tiktok_videos/""$(basename "$file")" ; done;`
+
+STEP 3 - Running the scipt
+After changing the `path` variables and change whatever othervarible you would like\
+run the python code.
+
+STEP 4 
+Execute the produced `0mv_file.txt` as script to produce folders based on the detected tiktok username,
+and move `"JPG"` files in the respective `username_folders`. This is as precaution.\
+You must open `0mv_file.txt` and remove ".jpg" extension in order to move mp4 files\
+in these folders instead of the extracted frames. 
 
                 
 
