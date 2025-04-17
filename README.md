@@ -130,7 +130,8 @@ STEP 2 - manipulate extracted frame
 2nd command: `for file in *.jpg; do convert "$file" -resize 200% -sharpen 0x10 -quality 100  "/mnt/sdd1/tiktok_videos/""$(basename "$file")" ; done;`
 
 STEP 3 - Running the scipt\
-After changing the `path` variables and change whatever othervarible you would like\
+After changing the `path` variables and change whatever other\ 
+varibles you would like to change,\
 run the python code.
 
 STEP 4 
