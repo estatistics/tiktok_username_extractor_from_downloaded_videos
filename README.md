@@ -140,6 +140,8 @@ and move `"JPG"` files in the respective `username_folders`. This is as precauti
 You must open `0mv_file.txt` and remove ".jpg" extension in order to move `mp4` files\
 in these folders instead of the respective extracted frames. 
 
+Feel free to contribute or comment. 
+
                 
 
 
