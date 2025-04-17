@@ -68,9 +68,8 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
   - The same will happen if the recognized text is shorter than 3 characters. It will be replaced with `'sample'` text.
 
 ### Debugging ?
-- uncommenting both `cv2.imshow` and `cv2.waitKey()` you can see the picture/s with username produced
- 
-- All print commands exists in this script for debbuging reasons, feel free to tried them if you like to check what happens per step
+- Uncommenting both `cv2.imshow` and `cv2.waitKey()` you can see the picture/s with username produced.
+- All print commands exists in this script for debbuging reasons, feel free to tried them if you like to check what happens per step.
 
 ### What files this script produces ?
 - You may uncomment `cv2.imwrite(os.path.join( match + "_cropped.jpg"), crop_image), crop_image)`
