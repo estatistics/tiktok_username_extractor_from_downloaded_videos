@@ -141,8 +141,7 @@ You must open `0mv_file.txt` and remove ".jpg" extension in order to move `mp4` 
 in these folders instead of the respective extracted frames. 
 
 ## Contribution
-Feel free to contribute or comment or share lists with tiktok videos.
-
+Feel free to contribute or comment or even exchange tiktok videos.
                 
 
 
