@@ -95,7 +95,7 @@ This is done by producing lines like:\
   
 - File is opened as "append". For every run ADD lines in the file.
 - You must do this manually `delete 0mv_file.txt`, if you would like, after each run
-- Otherwise you may have multiple same lines after each run. 
+- Otherwise you may have multiple duplicated lines after each run. 
     
                 f2 = open( os.path.join(pth0 + "0mv_file.txt"), "a")
                 f2.write("mkdir"+" "+'"'+str(path)+'"'+";"+'\n')
