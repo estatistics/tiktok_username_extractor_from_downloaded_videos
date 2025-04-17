@@ -137,8 +137,8 @@ run the python code.
 STEP 4 - Execution of produced file\
 Execute the produced `0mv_file.txt` as script to produce folders based on the detected tiktok username,
 and move `"JPG"` files in the respective `username_folders`. This is as precaution.\
-You must open `0mv_file.txt` and remove ".jpg" extension in order to move mp4 files\
-in these folders instead of the extracted frames. 
+You must open `0mv_file.txt` and remove ".jpg" extension in order to move `mp4` files\
+in these folders instead of the respective extracted frames. 
 
                 
 
