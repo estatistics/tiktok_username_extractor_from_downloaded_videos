@@ -125,7 +125,7 @@ Warning: if audio is shorter/bigger than video then incorrect frame may produced
 STEP 2 - manipulate extracted frame
 - you cant merge these two commands due to crop/resize are handled differently (???)
 - and it is confused - it process the same multiple times (bug?)
-- crop frame / resize / sharpen for better results
+- crop frame / resize / sharpen for better results\
 `for file in *.jpg; do convert "$file" -crop 100%x15%+0+500  -quality 100  "/mnt/sdd1/tiktok_videos/""$(basename "$file")" ; done;`
 `for file in *.jpg; do convert "$file" -resize 200% -sharpen 0x10 -quality 100  "/mnt/sdd1/tiktok_videos/""$(basename "$file")" ; done;`
 
