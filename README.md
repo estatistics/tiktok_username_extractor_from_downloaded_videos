@@ -106,12 +106,12 @@ This is done by producing lines like:\
 In the specified folder, check all files ".jpg" under the path that you provided inside the scipt.\
 They are saved in a variable "matches". Then image is proccessed as numpy area code. \
 Then the code try to detect the text area using frozen_east_text_detection.\
-Then using best confidence, extract the final dimension of the best box \
+Then using best confidence, extract the final dimension of the best box\
 that will be used to crop the detected text area. \
 
-Finally, the code, will provide you with a file name "0mv_file.txt" that \
-contains command to create folders according to detected username text, and \
-then move downloaded tiktok video files under it. 
+Finally, the code, will provide you with a file name "0mv_file.txt" that it will\
+contains commands to create folders according to detected username text, and \
+then commands to move downloaded tiktok video files under them, respectively. 
 
 
 
