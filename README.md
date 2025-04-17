@@ -5,7 +5,7 @@ It MUST include as last frame a black frame with the logo of Tiktok and the user
 at the center of the frame. 
 
 Part of code was adopted from [the github of diewland](https://github.com/diewland/text-detection-opencv-east/blob/master/opencv_ocr_image.py)
-Note that by trial and error frozen_east_text_detection is better for detecting the tiktok username text than tesseract. 
+Note that by trial and error `frozen_east_text_detection` is better for detecting the tiktok username text than tesseract. 
 
 ## Why this extractor ? 
 The extractor used on 9000+ downloaded tiktok videos containing or not in the final frame the tiktok username.\
