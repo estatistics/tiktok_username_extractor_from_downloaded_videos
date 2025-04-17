@@ -17,7 +17,7 @@ The python script will place these videos, respectively, under Folder userA & us
 - python3
 - tesseract
 - auto detetion for shapes (free on web) -> frozen_east_text_detection.pb\
-  you may place it in the same folder as this python script
+  you may place it in the same folder as this python script\
 `wget https://github.com/oyyd/frozen_east_text_detection.pb/blob/master/frozen_east_text_detection.pb`
 
 ## python 3 packages
