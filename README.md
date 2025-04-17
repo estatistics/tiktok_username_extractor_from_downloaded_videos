@@ -76,7 +76,7 @@ This line configure pytesseract (please refer to tesseract manual/help pages for
 ### What files this script produces ?
 - You may uncomment `cv2.imwrite(os.path.join( match + "_cropped.jpg"), crop_image), crop_image)`
    - if you like to save the cropped image with the detected text area.
-- You may comment these lines if you dont want the recognized username to be saved in a `"YOURfilename".jpg.txt` file.
+- You may comment these lines if you dont want the recognized username to be saved in a `"your_tiktok_video_filename".jpg.txt` file.
 ```
                 f = open( os.path.join(match + ".txt"), "w")
                 f.write(new_txt)
